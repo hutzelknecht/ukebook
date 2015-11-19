@@ -6,8 +6,6 @@
  */
 
 module.exports = {
-	
-
 
   /**
    * `UserController.index()`

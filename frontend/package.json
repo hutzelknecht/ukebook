@@ -4,7 +4,9 @@
   "dependencies": {
     "angular2": "2.0.0-alpha.36",
     "reflect-metadata": "0.1.1",
-    "systemjs": "0.18.17"
+    "systemjs": "0.18.17",
+    "scriptasaurus": "git+https://git@github.com/buzcarter/UkeGeeks.git"
+
   },
   "devDependencies": {
     "gulp": "3.9.0",
