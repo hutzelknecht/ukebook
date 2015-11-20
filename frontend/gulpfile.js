@@ -9,7 +9,7 @@ var gulp = require('gulp'),
 gulp.task('default', ['dependencies', 'js', 'html', 'css']);
 
 // run development task
-gulp.task('dev', ['watch', 'serve']);
+gulp.task('dev', ['testhtml', 'watch', 'serve']);
 
 // serve the build dir
 gulp.task('serve', function () {
@@ -61,6 +61,12 @@ gulp.task('js', function () {
 // move html
 gulp.task('html', function () {
   return gulp.src('src/**/*.html')
+    .pipe(gulp.dest('build'))
+});
+
+// move test html
+gulp.task('testhtml', function () {
+  return gulp.src('test/**/*.html')
     .pipe(gulp.dest('build'))
 });
 
