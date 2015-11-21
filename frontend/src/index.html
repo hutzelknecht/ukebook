@@ -1,29 +1,43 @@
 <!doctype html>
 <html lang="">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>frontend</title>
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>frontend</title>
+</head>
+<body>
 
+<div class="page-area">
+  <section class="west">
+    <div class="header"></div>
+    <div class="search"></div>
+    <div class="nav"></div>
+    <div class="songlist-container"></div>
+  </section>
+  <section class="content">
     <main>Loading...</main>
+  </section>
+  <section class="east"></section>
+</div>
+<div class="footer"></div>
 
-    <script src="lib/traceur-runtime.js"></script>
-    <script src="lib/system-csp-production.src.js"></script>
-    <script src="lib/Reflect.js"></script>
-    <script src="lib/ukeGeeks.scriptasaurus.min.js"></script>
 
-    <script>
-      System.config({defaultJSExtensions: true});
-    </script>
 
-    <script src="lib/angular2.js"></script>
+<script src="lib/traceur-runtime.js"></script>
+<script src="lib/system-csp-production.src.js"></script>
+<script src="lib/Reflect.js"></script>
+<script src="lib/ukeGeeks.scriptasaurus.min.js"></script>
 
-    <script>
-      System.import('index').catch(console.log.bind(console));
-    </script>
+<script>
+  System.config({defaultJSExtensions: true});
+</script>
 
-  </body>
+<script src="lib/angular2.js"></script>
+
+<script>
+  System.import('index').catch(console.log.bind(console));
+</script>
+
+</body>
 </html>

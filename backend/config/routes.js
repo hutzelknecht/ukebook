@@ -34,7 +34,9 @@ module.exports.routes = {
 
   '/': {
     view: 'homepage'
-  }
+  },
+
+  'GET /songlist': {action: 'SongController.list'
 
   /***************************************************************************
   *                                                                          *

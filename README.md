@@ -8,6 +8,7 @@ out individually or as a combined pdf.
 from any folder run:
 
     npm install -g sails
+    npm install -g gulp
     
 and in backend folder run    
     
