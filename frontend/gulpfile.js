@@ -34,7 +34,7 @@ gulp.task('dependencies', function () {
       'node_modules/angular-animate/angular-animate.js',
       'node_modules/angular-bootstrap/ui-bootstrap-tpls.js',
       'node_modules/angular-local-storage/dist/angular-local-storage.js',
-      'node_modules/angular-mocks/angular-mocks.js',
+      'node_modules/angular-messages/angular-messages.js',
       'node_modules/angular-resource/angular-resource.js',
       'node_modules/angular-route/angular-route.js',
       'node_modules/angular-sanitize/angular-sanitize.js',
@@ -43,10 +43,6 @@ gulp.task('dependencies', function () {
       'node_modules/q/q.js',
       'node_modules/angular-route-segment/build/angular-route-segment.js',
       'node_modules/gulp-traceur/node_modules/traceur/bin/traceur-runtime.js',
-      'node_modules/systemjs/dist/system-csp-production.src.js',
-      'node_modules/systemjs/dist/system.js',
-      'node_modules/reflect-metadata/Reflect.js',
-      'node_modules/angular2/bundles/angular2.js',
       'scriptasaurus/ukeGeeks.scriptasaurus.min.js'
     ])
     .pipe(gulp.dest('build/lib'));
@@ -59,9 +55,9 @@ gulp.task('js', function () {
       extname: ''
     }))
     .pipe(traceur({
-      modules: 'instantiate',
-      moduleName: true,
-      annotations: true,
+      //modules: 'instantiate',
+      //moduleName: true,
+      //annotations: true,
       types: true,
       memberVariables: true
     }))

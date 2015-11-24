@@ -1,19 +1,15 @@
-import {Song} from 'song';
 
-angular.module('ukebook', ['ngAnimate',
+angular.module('ukebook', [
+    'ngAnimate',
     'ngResource',
     'ngRoute',
     'route-segment',
     'view-segment',
     'ngSanitize',
     'ngTouch',
-    'ngLocale',
-    'ui.bootstrap',
-    'LocalStorageModule'
-    ])
-  .config(function($routeProvider, $routeSegmentProvider, $httpProvider, tmhDynamicLocaleProvider, localStorageServiceProvider, $translateProvider, dialogsProvider) {
-
-    localStorageServiceProvider.setPrefix('ukebook');
+    'ui.bootstrap'
+  ])
+  .config(function($routeProvider, $routeSegmentProvider, $httpProvider) {
 
     $routeProvider.otherwise({
       redirectTo: '/'
@@ -21,16 +17,16 @@ angular.module('ukebook', ['ngAnimate',
 
     $routeSegmentProvider
       .when('/', 'overview')
-      .when('/error/:status', 'error')
+      .when('/song/:id', 'song')
 
-      .segment('error',{
-        templateUrl: 'scripts/error/Error.html',
-        controller: 'ErrorCtrl',
-        dependencies: ['status']
+      .segment('song',{
+        templateUrl: 'song.html',
+        controller: 'SongCtrl',
+        dependencies: ['id']
       })
       .segment('overview',{
-        templateUrl: 'scripts/main/Overview.html',
-        controller: 'MainCtrl',
+        templateUrl: 'overview.html',
+        controller: 'OverviewCtrl',
         default: true
       });
 

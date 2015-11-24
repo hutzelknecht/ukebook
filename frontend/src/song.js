@@ -1,11 +1,15 @@
-let scriptasaurus = ukeGeeks.scriptasaurus;
+// Overview Component
 
-export class Song {
-  constructor(params: RouteParams){
-    this.id = params.get('id');
-  }
-  onInit(){
+angular.module('ukebook')
+  .controller('SongCtrl',function($rootScope, $scope){
+    let scriptasaurus = ukeGeeks.scriptasaurus;
+
+    $scope.header = 'SONG';
+
     scriptasaurus.init();
     scriptasaurus.run();
-  }
-}
+
+  });
+
+
+
