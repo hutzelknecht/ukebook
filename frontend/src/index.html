@@ -10,6 +10,19 @@
 
 <main>Loading...</main>
 
+<script src="lib/jquery.js"></script>
+<script src="lib/angular.js"></script>
+<script src="lib/angular-animate.js"></script>
+<script src="lib/ui-bootstrap-tpls.js"></script>
+<script src="lib/angular-local-storage.js"></script>
+<script src="lib/angular-resource.js"></script>
+<script src="lib/angular-route.js"></script>
+<script src="lib/angular-sanitize.js"></script>
+<script src="lib/angular-touch.js"></script>
+<script src="lib/bootstrap.min.js"></script>
+<script src="lib/q.js"></script>
+<script src="lib/angular-route-segment.js"></script>
+
 <script src="lib/traceur-runtime.js"></script>
 <script src="lib/system-csp-production.src.js"></script>
 <script src="lib/Reflect.js"></script>
@@ -19,10 +32,8 @@
   System.config({defaultJSExtensions: true});
 </script>
 
-<script src="lib/angular2.js"></script>
-
 <script>
-  System.import('index').catch(console.log.bind(console));
+  System.import('app').catch(console.log.bind(console));
 </script>
 
 </body>
