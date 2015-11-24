@@ -1,16 +1,33 @@
 // Overview Component
 
 angular.module('ukebook')
-  .controller('SongCtrl',function($rootScope, $scope, $routeSegment){
+  .controller('SongCtrl',function($rootScope, $scope, $routeSegment, $interval, $http){
+
     let scriptasaurus = ukeGeeks.scriptasaurus;
-    $scope.header = $routeSegment.$routeParams.id;
-    //scriptasaurus.init();
-    //scriptasaurus.run();
+
+    $scope.songId = $routeSegment.$routeParams.id;
+
+    $scope.fetchSong = function(){
+      return $http.get('tabs/song.tab').then(function(song){
+        $scope.data = song.data;
+        $interval(function() {
+          scriptasaurus.init();
+          scriptasaurus.run();
+        }, 0, 1);
+      });
+    };
+
   })
-  .directive('song',function(){
+  .directive('ukeSongText',function(){
     return {
-      template: '{{data}}',
-      controller: 'SongCtrl'
+      restrict: 'E',
+      templateUrl: 'song.html',
+      controller: 'SongCtrl',
+      link: function($scope, $element, $attributes){
+
+        $scope.fetchSong();
+
+      }
     }
   });
 

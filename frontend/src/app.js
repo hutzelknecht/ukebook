@@ -20,7 +20,7 @@ angular.module('ukebook', [
       .when('/song/:id', 'song')
 
       .segment('song',{
-        templateUrl: 'song.html',
+        templateUrl: 'songpage.html',
         controller: 'SongCtrl',
         dependencies: ['id']
       })

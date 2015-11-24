@@ -7,7 +7,7 @@ var gulp = require('gulp'),
   webserver = require('gulp-webserver');
 
 // run init tasks
-gulp.task('default', ['dependencies', 'js', 'html', 'sass', 'css']);
+gulp.task('default', ['dependencies', 'js', 'html', 'sass', 'tab', 'css']);
 
 // run development task
 gulp.task('dev', ['testhtml', 'watch', 'serve']);
@@ -25,7 +25,8 @@ gulp.task('watch', function () {
   gulp.watch('src/**/*.js', ['js']);
   gulp.watch('src/**/*.html', ['html']);
   gulp.watch('styles/**/*.css', ['css']);
-  gulp.watch('styles/**/*.scss', ['sass'])
+  gulp.watch('styles/**/*.scss', ['sass']);
+  gulp.watch('src/**/*.tab', ['tab']);
 });
 
 // move dependencies into build dir
@@ -83,8 +84,14 @@ gulp.task('testhtml', function () {
 
 // move css
 gulp.task('css', function () {
-  return gulp.src('src/**/*.css')
-    .pipe(gulp.dest('build'))
+  return gulp.src(['src/**/*.css','scriptasaurus/*.css'])
+    .pipe(gulp.dest('build/css'))
+});
+
+// move tabulatures
+gulp.task('tab', function () {
+  return gulp.src('src/**/*.tab')
+    .pipe(gulp.dest('build/tabs'))
 });
 
 // sass
