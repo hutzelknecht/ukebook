@@ -1,12 +1,13 @@
 var gulp = require('gulp'),
   concat = require('gulp-concat'),
+  sass = require('gulp-sass'),
   rename = require('gulp-rename'),
   shell = require('gulp-shell'),
   traceur = require('gulp-traceur'),
   webserver = require('gulp-webserver');
 
 // run init tasks
-gulp.task('default', ['dependencies', 'js', 'html', 'css']);
+gulp.task('default', ['dependencies', 'js', 'html', 'sass', 'css']);
 
 // run development task
 gulp.task('dev', ['testhtml', 'watch', 'serve']);
@@ -23,7 +24,8 @@ gulp.task('serve', function () {
 gulp.task('watch', function () {
   gulp.watch('src/**/*.js', ['js']);
   gulp.watch('src/**/*.html', ['html']);
-  gulp.watch('src/**/*.css', ['css']);
+  gulp.watch('styles/**/*.css', ['css']);
+  gulp.watch('styles/**/*.scss', ['sass'])
 });
 
 // move dependencies into build dir
@@ -83,4 +85,11 @@ gulp.task('testhtml', function () {
 gulp.task('css', function () {
   return gulp.src('src/**/*.css')
     .pipe(gulp.dest('build'))
+});
+
+// sass
+gulp.task('sass', function () {
+  gulp.src('styles/**/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('build/css'));
 });

@@ -5,11 +5,23 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ukebook</title>
+  <link rel="stylesheet" href="css/layout.css" type="text/css">
 </head>
 <body>
 
 <div ng-app="ukebook">
-  <div app-view-segment="0"></div>
+  <div class="page-area">
+    <section class="west">
+      <div class="header"></div>
+      <div class="search"></div>
+      <div class="nav"></div>
+      <div class="songlist-container"></div>
+    </section>
+    <section class="content" app-view-segment="0">
+    </section>
+    <section class="east"></section>
+  </div>
+  <div class="footer"></div>
 </div>
 
 <script src="lib/jquery.js"></script>
