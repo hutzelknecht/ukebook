@@ -1,0 +1,21 @@
+.ugs-diagrams-wrap {
+
+}
+
+.ugs-source-wrap {
+  display: block;
+  pre {
+    display: inherit;
+    &.ugsPlain,&.ugsTabs {
+      overflow-y: hidden;
+    }
+  }
+  code {
+    white-space: pre;
+    display: initial;
+
+  }
+}
+.ugsChords code em {
+  color: #d20 !important;
+}
