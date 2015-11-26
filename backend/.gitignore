@@ -15,6 +15,7 @@
 .project
 .strong-pm
 datasources.json
+**/datasources.json
 coverage
 node_modules
 npm-debug.log

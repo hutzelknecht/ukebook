@@ -3,8 +3,14 @@
     "name": "db",
     "connector": "memory"
   },
-  "mongo": {
-    "name": "mongo",
-    "connector": "mongodb"
+  "production": {
+    "name": "production",
+    "connector": "postgresql",
+    "host": "localhost",
+    "port": "5432",
+    "database": "ukebook",
+    "username": "postgres",
+    "password": "Sturmius44",
+    "debug": true
   }
 }
