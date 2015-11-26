@@ -14,26 +14,26 @@
     ]
   },
   "User": {
-    "dataSource": "db"
+    "dataSource": "production"
   },
   "AccessToken": {
-    "dataSource": "db",
+    "dataSource": "production",
     "public": false
   },
   "ACL": {
-    "dataSource": "db",
+    "dataSource": "production",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "db",
+    "dataSource": "production",
     "public": false
   },
   "Role": {
-    "dataSource": "db",
+    "dataSource": "production",
     "public": false
   },
   "Song": {
-    "dataSource": "db",
+    "dataSource": "production",
     "public": true
   }
 }

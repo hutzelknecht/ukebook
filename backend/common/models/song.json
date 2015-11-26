@@ -8,7 +8,11 @@
   },
   "properties": {
     "tab": {
-      "type": "string"
+      "type": "string",
+      "postgresql": {
+        "columnName": "tab",
+        "dataType": "text"
+      }
     },
     "title": {
       "type": "string",
