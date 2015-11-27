@@ -7,14 +7,16 @@ out individually or as a combined pdf.
 ## installation
 from any folder run:
 
-    npm install -g sails
+    npm install -g strongloop
     npm install -g gulp
-    
-and in backend folder run    
-    
-    npm install
     
 in frontend folder run:
 
     npm install
     gulp
+
+and in backend folder run    
+    
+    npm install
+    node .   
+

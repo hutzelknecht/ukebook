@@ -5,24 +5,24 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ukebook</title>
+
   <link rel="stylesheet" href="css/layout.css" type="text/css">
   <link rel="stylesheet" href="css/ukeGeeks.music.css" type="text/css">
 </head>
 <body>
 
-<div ng-app="ukebook">
-  <div class="page-area">
-    <section class="west">
-      <div class="header"></div>
-      <div class="search"></div>
-      <div class="nav"></div>
-      <div class="songlist-container"></div>
-    </section>
-    <section class="content" app-view-segment="0">
-    </section>
-    <section class="east"></section>
+<div ng-app="ukebook" class="container-fluid">
+  <div class="page-area fill">
+    <div class="west col-md-2 no-float fill">
+      <div class="header">header</div>
+      <div class="search">search</div>
+      <div class="nav">nav</div>
+      <div class="songlist-container">songlist</div>
+    </div>
+    <div class="content no-float fill" app-view-segment="0"></div>
+    <div class="east col-md-2 no-float">east</div>
   </div>
-  <div class="footer"></div>
+  <div class="footer col-md-12 row-fluid">footer</div>
 </div>
 
 <script src="lib/jquery.js"></script>
