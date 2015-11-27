@@ -8,7 +8,7 @@ angular.module('ukebook')
     $scope.songId = $routeSegment.$routeParams.id;
 
     $scope.fetchSong = function(){
-      return $http.get('tabs/song.tab').then(function(song){
+      return $http.get('/api/1').then(function(song){
         $scope.data = song.data;
         $interval(function() {
           scriptasaurus.init();
