@@ -22,7 +22,12 @@
       ]
     }
   },
-  "files": {},
+  "files": {
+    "loopback#static": {
+      "params": "$!../../frontend/build",
+      "paths": "/"
+    }
+  },
   "final": {
     "loopback#urlNotFound": {}
   },
