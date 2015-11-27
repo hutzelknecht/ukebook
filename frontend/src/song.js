@@ -3,13 +3,13 @@
 angular.module('ukebook')
   .controller('SongCtrl',function($rootScope, $scope, $routeSegment, $interval, $http){
 
-    let scriptasaurus = ukeGeeks.scriptasaurus;
+    var scriptasaurus = ukeGeeks.scriptasaurus;
 
     $scope.songId = $routeSegment.$routeParams.id;
 
     $scope.fetchSong = function(){
-      return $http.get('/api/1').then(function(song){
-        $scope.data = song.data;
+      return $http.get('/api/songs/' + $scope.songId).then(function(song){
+        $scope.data = song.data.tab;
         $interval(function() {
           scriptasaurus.init();
           scriptasaurus.run();
