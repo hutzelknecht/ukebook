@@ -9,7 +9,7 @@ angular.module('ukebook')
 
     $scope.fetchSong = function(){
       return $http.get('/api/songs/' + $scope.songId).then(function(song){
-        $scope.data = song.data.tab;
+        $scope.song = song.data;
         $interval(function() {
           scriptasaurus.init();
           scriptasaurus.run();
@@ -21,7 +21,7 @@ angular.module('ukebook')
   .directive('ukeSongText',function(){
     return {
       restrict: 'E',
-      templateUrl: 'song.html',
+      template: '<pre>{{song.tab}}</pre>',
       controller: 'SongCtrl',
       link: function($scope, $element, $attributes){
 
