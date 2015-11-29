@@ -2,11 +2,13 @@
   ul {
     display: block;
     padding-left: 2px;
-    background-color: #D0DDE0;
+
     li {
       display: inline-block;
       list-style-type: none;
       padding: 2px 6px;
+      background-color: #D0DDE0;
+      margin-bottom: 4px;
       a {
 
       }
