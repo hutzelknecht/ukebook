@@ -26,15 +26,45 @@
     }
   },
   "indexes": {
-    "title_by_author_index": {
-      "keys": {"title": 1, "author": 1}
-    },
-    "author_index": {
-      "keys": {"author": 1}
-    }
+    "title_by_author": { "keys": { "title": 1, "author": 1 } },
+    "author":          { "keys": { "author": 1 } }
   },
   "validations": [],
   "relations": {},
-  "acls": [],
+  "acls": [{
+    "comment":"first of all deny everything for everyone",
+    "accessType": "*",
+    "principalType": "ROLE",
+    "principalId": "3",
+    "permission": "DENY"
+  },{
+    "comment":"allow viewing a list of songs",
+    "accessType": "READ",
+    "principalType": "ROLE",
+    "principalId": "$everyone",
+    "permission": "ALLOW",
+    "property": "find"
+  },{
+    "comment":"allow viewing a song",
+    "accessType": "READ",
+    "principalType": "ROLE",
+    "principalId": "$everyone",
+    "permission": "ALLOW",
+    "property": "findById"
+  },{
+    "comment":"allow editors to edit a song",
+    "accessType": "WRITE",
+    "principalType": "ROLE",
+    "principalId": "2",
+    "permission": "ALLOW",
+    "property": "*"
+  },{
+    "comment":"allow admins to edit a song",
+    "accessType": "WRITE",
+    "principalType": "ROLE",
+    "principalId": "1",
+    "permission": "ALLOW",
+    "property": "*"
+  }],
   "methods": {}
 }
