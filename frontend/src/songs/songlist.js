@@ -16,7 +16,7 @@ angular.module('ukebook')
   .directive('ukeSongList',function(){
     return {
       restrict: 'E',
-      templateUrl: 'songlist.html',
+      templateUrl: 'songs/songlist.html',
       controller: 'SongListCtrl',
       link: function($scope, $element, $attributes){
 

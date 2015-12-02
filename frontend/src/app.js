@@ -9,7 +9,7 @@ angular.module('ukebook', [
     'ngTouch',
     'ui.bootstrap'
   ])
-  .config(function($routeProvider, $routeSegmentProvider, $httpProvider) {
+  .config(function($rootScopeProvider, $routeProvider, $routeSegmentProvider, $httpProvider) {
 
     $routeProvider.otherwise({
       redirectTo: '/'
@@ -20,7 +20,7 @@ angular.module('ukebook', [
       .when('/song/:id', 'song')
 
       .segment('song',{
-        templateUrl: 'songpage.html',
+        templateUrl: 'songs/songpage.html',
         controller: 'SongCtrl',
         dependencies: ['id']
       })
@@ -32,4 +32,12 @@ angular.module('ukebook', [
 
     $httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
+  })
+  .run(function($rootScope, $interval, $auth){
+    $rootScope.showLoginForm = false;
+    $rootScope.toggleLogin = function(){
+      $interval(function(){
+        $auth.toggleLogin();
+      },0,1);
+    };
   });
