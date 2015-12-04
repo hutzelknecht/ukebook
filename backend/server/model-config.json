@@ -22,15 +22,15 @@
   },
   "ACL": {
     "dataSource": "production",
-    "public": false
+    "public": true
   },
   "RoleMapping": {
     "dataSource": "production",
-    "public": false
+    "public": true
   },
   "Role": {
     "dataSource": "production",
-    "public": false
+    "public": true
   },
   "Song": {
     "dataSource": "production",

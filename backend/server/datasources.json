@@ -10,7 +10,7 @@
     "port": "5432",
     "database": "ukebook",
     "username": "postgres",
-    "password": "postgres",
+    "password": "Sturmius44",
     "debug": true
   }
 }

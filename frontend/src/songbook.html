@@ -1,0 +1,25 @@
+<div class="songbook-cover page-break"><h1>UkeBook</h1></div>
+<div class="songbook-index" style="display: none;">
+  <ul>
+    <li ng-repeat="index in songbook | orderBy:'title'" class="index-row">
+      <span>{{index.title}}</span>
+      <span> by ({{index.author}})</span>
+      <span class="index-page-number">... {{$index + 1}}</span>
+    </li>
+  </ul>
+</div>
+<div ng-repeat="song in songbook | orderBy:'title'" class="songbook-page">
+  <h2>{{song.title}}</h2>
+  <h3>{{song.author}}</h3>
+
+  <div id="ukeSongContainer" class="ugsLayoutTwoColumn ugs-song-wrap">
+    <aside id="ukeChordsCanvas" class="ugs-diagrams-wrap ugs-grouped">
+      <canvas>
+        <p>Your browser doesn't support canvas please upgrade (FREE) to <a href="http://www.google.com/chrome">Google Chrome</a>, <a href="http://www.mozilla.com/en-US/firefox/">Firefox</a>, or <a href="http://www.apple.com/safari/">Apple Safari</a>.</p>
+      </canvas>
+    </aside>
+    <div id="ukeSongText" class="ugs-source-wrap">
+      <pre>{{song.tab}}</pre>
+    </div>
+  </div>
+</div>
