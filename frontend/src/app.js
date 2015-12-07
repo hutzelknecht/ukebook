@@ -18,16 +18,24 @@ angular.module('ukebook', [
     $routeSegmentProvider
       .when('/', 'overview')
       .when('/song/:id', 'song')
+      .when('/songbook', 'songbook')
 
       .segment('song',{
         templateUrl: 'songs/songpage.html',
         controller: 'SongCtrl',
+        controllerAs: 'songCtrl',
         dependencies: ['id']
       })
       .segment('overview',{
         templateUrl: 'overview.html',
         controller: 'OverviewCtrl',
+        controllerAs: 'overviewCtrl',
         default: true
+      })
+      .segment('songbook', {
+        templateUrl: 'songbook.html',
+        controller: 'SongbookCtrl',
+        controllerAs: 'songbookCtrl'
       });
 
     $httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';

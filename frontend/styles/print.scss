@@ -1,0 +1,29 @@
+@media print {
+  .page-break {
+    page-break-after: always;
+  }
+  .songbook-page {
+    page-break-before: always;
+  }
+  .footer {
+    height: 0;
+    display: none !important;
+  }
+}
+
+.ugsChords,.ugsComment {
+  page-break-inside: avoid;
+}
+
+.songbook-index {
+  ul {
+    padding-left: 0;
+  }
+  .index-row {
+    display: inline-block;
+    width: 100%;
+  }
+  .index-page-number {
+    float: right;
+  }
+}
