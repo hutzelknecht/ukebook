@@ -22,4 +22,25 @@ and in backend folder run
     
     npm install
     node .   
+    
+in backend/server folder create a file **datasources.json** such as
+
+
+    {
+      "db": {
+        "name": "db",
+        "connector": "memory"
+      },
+      "production": {
+        "name": "production",
+        "connector": "postgresql",
+        "host": "localhost",
+        "port": "5432",
+        "database": "ukebook",
+        "username": "postgres",
+        "password": "postgres",
+        "debug": false
+      }
+    }
+    
 
