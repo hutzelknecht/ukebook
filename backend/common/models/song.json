@@ -32,12 +32,6 @@
   "validations": [],
   "relations": {},
   "acls": [{
-    "comment":"first of all deny everything for everyone",
-    "accessType": "*",
-    "principalType": "ROLE",
-    "principalId": "3",
-    "permission": "DENY"
-  },{
     "comment":"allow viewing a list of songs",
     "accessType": "READ",
     "principalType": "ROLE",
