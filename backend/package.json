@@ -17,6 +17,7 @@
     "loopback-component-explorer": "^2.1.0",
     "loopback-connector-postgresql": "^2.4.0",
     "loopback-datasource-juggler": "^2.39.0",
+    "node-wkhtmltopdf": "^2.0.0",
     "serve-favicon": "^2.0.1",
     "wkhtmltopdf": "^0.1.5"
   },

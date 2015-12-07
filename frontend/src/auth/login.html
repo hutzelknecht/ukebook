@@ -1,0 +1,11 @@
+<form ng-if="auth.$auth.isLoginFormVisible()">
+  <p class="input-group" ng-if="!auth.userId">
+    <input type="text" class="form-control" ng-model="auth.loginEmail">
+    <input type="password" class="form-control" ng-model="auth.loginPassword">
+    <button class="btn btn-xs btn-primary" ng-click="auth.login()">fring!</button>
+  </p>
+  <p class="inputt-group" ng-if="auth.userId">
+    <span>Hello {{auth.userName}}!</span>
+    <button class="btn btn-xs btn-primary" ng-click="auth.logout()">logout</button>
+  </p>
+</form>

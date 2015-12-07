@@ -1,0 +1,27 @@
+
+<h2>{{songCtrl.song.title}}</h2>
+<h3>{{songCtrl.song.author}}</h3>
+
+<div id="ukeSongContainer" class="ugsLayoutTwoColumn ugs-song-wrap">
+  <aside id="ukeChordsCanvas" class="ugs-diagrams-wrap ugs-grouped">
+    <canvas>
+      <p>Your browser doesn't support canvas please upgrade (FREE) to <a href="http://www.google.com/chrome">Google Chrome</a>, <a href="http://www.mozilla.com/en-US/firefox/">Firefox</a>, or <a href="http://www.apple.com/safari/">Apple Safari</a>.</p>
+    </canvas>
+  </aside>
+  <uke-song-text id="ukeSongText" class="ugs-source-wrap"/>
+</div>
+<form ng-if="songCtrl.user">
+  <div class="form-group">
+    <label>markup</label>
+    <textarea class="form-control" ng-model="songCtrl.song.tab"></textarea>
+  </div>
+  <div class="form-group">
+    <label>title</label>
+    <input class="form-control" type="text" ng-model="songCtrl.song.title"></input>
+  </div>
+  <div class="form-group">
+    <label>author</label>
+    <input class="form-control" type="text" ng-model="songCtrl.song.author"></input>
+  </div>
+  <button class="btn btn-xs btn-default" ng-click="songCtrl.save()">save</button>
+</form>
