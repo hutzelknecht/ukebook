@@ -1,7 +1,7 @@
 // Overview Component
 
 angular.module('ukebook')
-  .controller('SongCtrl',function($rootScope, $scope, $routeSegment, $interval, $http, $auth, $songs){
+  .controller('SongCtrl',function($rootScope, $scope, $location, $routeSegment, $interval, $http, $auth, $songs){
 
     var scriptasaurus = ukeGeeks.scriptasaurus;
     var tabs;
@@ -23,7 +23,11 @@ angular.module('ukebook')
       }.bind(this));
     };
 
-    this.delete = $songs.delete.bind(this, this.songId);
+    this.delete = function(){
+      $songs.delete(this.songId).then(function(){
+        $location.url('/');
+      });
+    };
 
     this.user = $auth.getUser();
 

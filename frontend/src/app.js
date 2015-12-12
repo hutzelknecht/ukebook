@@ -5,6 +5,7 @@ angular.module('ukebook', [
     'ngRoute',
     'route-segment',
     'view-segment',
+    'ngCookies',
     'ngSanitize',
     'ngTouch',
     'ui.bootstrap'

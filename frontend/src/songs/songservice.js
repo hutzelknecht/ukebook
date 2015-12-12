@@ -22,7 +22,7 @@ angular.module('ukebook')
     };
     sharedService.delete = function(id){
       return $http.delete('/api/Songs/' + id).then(function(songs){
-        sharedService.get();
+        return sharedService.get();
       }, function(){
         console.warn('failed to delete song ' + id);
       });

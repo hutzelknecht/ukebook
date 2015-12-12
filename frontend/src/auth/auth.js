@@ -17,31 +17,41 @@ angular.module('ukebook')
       }
     }
   })
-  .controller('AuthCtrl',function($rootScope, $scope, $auth, $http){
+  .controller('AuthCtrl',function($rootScope, $scope, $auth, $http, $cookies){
 
-    var access_token = null;
+    var access_token = null,
+      old_token= $cookies.get('ukebook-token');
 
     this.$auth = $auth;
     this.loginEmail = null;
     this.loginPassword = null;
     this.allowLogin = false;
 
+    // get old token from cookie
+    if (old_token) {
+      $http.defaults.headers.common.Authorization = old_token;
+      this.login(old_token);
+    }
     this.setToken = function(token){
       access_token = token;
+      $cookies.put('ukebook-token', token);
       $http.defaults.headers.common.Authorization = token;
     };
 
-    this.login = function(){
+    this.login = function(token){
       var credentials = {
         email: this.loginEmail,
         password: this.loginPassword
       };
+      var method = token ? 'get' : post;
+      var url = token ? 'api/users/' + $cookies.get('ukebook-user-id') : //weiter hier !!!
       $http.post('api/users/login',credentials).then(function(response){
         this.setToken(response.data.id);
         this.userId = response.data.userId;
         $http.get('api/users/'+ this.userId).then(function(response){
           var user = response.data;
           this.userName = user.username;
+          $cookies.put('ukebook-user-id', user.id);
           $auth.setUser(user);
           $rootScope.user = $auth.getUser();
         }.bind(this));
