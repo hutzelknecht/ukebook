@@ -10,7 +10,7 @@
   </aside>
   <uke-song-text id="ukeSongText" class="ugs-source-wrap"/>
 </div>
-<form ng-if="songCtrl.user">
+<form ng-if="user">
   <div class="form-group">
     <label>markup</label>
     <textarea class="form-control" ng-model="songCtrl.song.tab"></textarea>
@@ -23,5 +23,6 @@
     <label>author</label>
     <input class="form-control" type="text" ng-model="songCtrl.song.author"></input>
   </div>
-  <button class="btn btn-xs btn-default" ng-click="songCtrl.save()">save</button>
+  <button class="btn btn-xs btn-default" ng-click="songCtrl.delete()">delete</button>
+  <button class="btn btn-xs btn-primary" ng-click="songCtrl.save()">save</button>
 </form>

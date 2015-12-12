@@ -1,16 +1,13 @@
 // Overview Component
 
 angular.module('ukebook')
-  .controller('SongListCtrl',function($rootScope, $scope, $routeSegment, $interval, $http){
+  .controller('SongListCtrl',function($rootScope, $scope, $routeSegment, $interval, $http, $songs){
 
     $scope.songId = $routeSegment.$routeParams.id;
 
-    $scope.fetchSongList = function(){
-      var fieldsFilter = '?filter[fields][title]=true&filter[fields][id]=true'
-      return $http.get('/api/songs' + fieldsFilter).then(function(songs){
-        $scope.songs = songs.data;
-      });
-    };
+    $scope.fetchSongList = $songs.get;
+
+    $scope.$songs = $songs;
 
   })
   .directive('ukeSongList',function(){

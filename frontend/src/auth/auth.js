@@ -17,7 +17,7 @@ angular.module('ukebook')
       }
     }
   })
-  .controller('AuthCtrl',function($scope, $auth, $http){
+  .controller('AuthCtrl',function($rootScope, $scope, $auth, $http){
 
     var access_token = null;
 
@@ -37,13 +37,13 @@ angular.module('ukebook')
         password: this.loginPassword
       };
       $http.post('api/users/login',credentials).then(function(response){
-        console.log("login", response);
         this.setToken(response.data.id);
         this.userId = response.data.userId;
         $http.get('api/users/'+ this.userId).then(function(response){
           var user = response.data;
           this.userName = user.username;
           $auth.setUser(user);
+          $rootScope.user = $auth.getUser();
         }.bind(this));
       }.bind(this));
     };

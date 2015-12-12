@@ -1,7 +1,7 @@
 // Overview Component
 
 angular.module('ukebook')
-  .controller('SongCtrl',function($rootScope, $scope, $routeSegment, $interval, $http, $auth){
+  .controller('SongCtrl',function($rootScope, $scope, $routeSegment, $interval, $http, $auth, $songs){
 
     var scriptasaurus = ukeGeeks.scriptasaurus;
     var tabs;
@@ -19,8 +19,11 @@ angular.module('ukebook')
       $http.put('/api/songs/' + this.songId, this.song).then(function(response){
         this.song = response.data;
         this.triggerRelink(this.song.tab);
+        $songs.get();
       }.bind(this));
     };
+
+    this.delete = $songs.delete.bind(this, this.songId);
 
     this.user = $auth.getUser();
 
