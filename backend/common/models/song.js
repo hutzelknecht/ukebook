@@ -6,11 +6,12 @@ module.exports = function(Song) {
     res.type('application/pdf');
     res.attachment('songbook.pdf');
     wkhtmltopdf('http://localhost:3000/#/songbook', {
-      pageSize: 'A4',
-      encoding: 'binary',
+      //pageSize: 'A4',
+      //encoding: 'binary',
       JavascriptDelay: 1000,
       outlineDepth: 2,
       printMediaType: true,
+      debug: false,
       toc: {}
     }).pipe(res, 'binary');
 

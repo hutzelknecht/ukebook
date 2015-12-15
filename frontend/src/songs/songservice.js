@@ -13,8 +13,8 @@ angular.module('ukebook')
         console.warn('failed to fetch song list');
       });
     };
-    sharedService.create = function(){
-      return $http.post('/api/Songs', {title: 'bla'}).then(function(songs){
+    sharedService.create = function(title){
+      return $http.post('/api/Songs', {title: title || 'New Song'}).then(function(songs){
         sharedService.get();
       }, function(){
         console.warn('failed to create a song');

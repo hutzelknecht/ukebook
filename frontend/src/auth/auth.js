@@ -27,11 +27,6 @@ angular.module('ukebook')
     this.loginPassword = null;
     this.allowLogin = false;
 
-    // get old token from cookie
-    if (old_token) {
-      $http.defaults.headers.common.Authorization = old_token;
-      this.login(old_token);
-    }
     this.setToken = function(token){
       access_token = token;
       $cookies.put('ukebook-token', token);
@@ -43,18 +38,29 @@ angular.module('ukebook')
         email: this.loginEmail,
         password: this.loginPassword
       };
-      var method = token ? 'get' : post;
-      var url = token ? 'api/users/' + $cookies.get('ukebook-user-id') : //weiter hier !!!
-      $http.post('api/users/login',credentials).then(function(response){
-        this.setToken(response.data.id);
-        this.userId = response.data.userId;
-        $http.get('api/users/'+ this.userId).then(function(response){
-          var user = response.data;
+      var method = token ? 'get' : 'post';
+      var url = token ? 'api/users/' + $cookies.get('ukebook-user-id') : 'api/users/login'; //weiter hier !!!
+      $http[method].apply(this, token ? [url] : [url,credentials]).then(function(response){
+        if (!response.data.username) {
+          this.setToken(response.data.id);
+          this.userId = response.data.userId;
+        } else {
+          this.userId = response.data.id;
+        }
+        var setUser = function(res){
+          var user = res.data;
           this.userName = user.username;
           $cookies.put('ukebook-user-id', user.id);
           $auth.setUser(user);
           $rootScope.user = $auth.getUser();
-        }.bind(this));
+        }.bind(this);
+        if (!response.data.username) {
+          $http.get('api/users/'+ this.userId).then(function(res){
+            setUser(res);
+          }.bind(this));
+        } else {
+          setUser(response);
+        }
       }.bind(this));
     };
 
@@ -62,6 +68,12 @@ angular.module('ukebook')
       this.userId = null;
       this.setToken(null);
     };
+
+    // get old token from cookie
+    if (old_token) {
+      $http.defaults.headers.common.Authorization = old_token;
+      this.login(old_token);
+    }
 
   })
   .directive('login',function(){
