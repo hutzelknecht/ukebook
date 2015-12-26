@@ -7,7 +7,7 @@ var gulp = require('gulp'),
   webserver = require('gulp-webserver');
 
 // run init tasks
-gulp.task('default', ['dependencies', 'js', 'html', 'sass', 'tab', 'css']);
+gulp.task('default', ['dependencies', 'js', 'html', 'sass', 'tab', 'fonts', 'css']);
 
 // run development task
 gulp.task('dev', ['testhtml', 'watch', 'serve']);
@@ -87,6 +87,12 @@ gulp.task('testhtml', function () {
 gulp.task('css', function () {
   return gulp.src(['src/**/*.css','scriptasaurus/*.css'])
     .pipe(gulp.dest('build/css'))
+});
+
+// move fonts
+gulp.task('fonts', function () {
+  return gulp.src(['node_modules/bootstrap/fonts/*.*'])
+    .pipe(gulp.dest('build/fonts/bootstrap'))
 });
 
 // move tabulatures

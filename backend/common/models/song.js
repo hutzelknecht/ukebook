@@ -5,7 +5,7 @@ module.exports = function(Song) {
 
     res.type('application/pdf');
     res.attachment('songbook.pdf');
-    wkhtmltopdf('http://localhost:3000/#/songbook', {
+    wkhtmltopdf('/#/songbook', {
       //pageSize: 'A4',
       //encoding: 'binary',
       JavascriptDelay: 1000,
