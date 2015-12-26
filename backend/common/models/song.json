@@ -62,16 +62,23 @@
     "comment":"editors can edit a song",
     "accessType": "WRITE",
     "principalType": "ROLE",
-    "principalId": "3",
+    "principalId": "editor",
     "permission": "ALLOW",
     "property": "*"
   },{
     "comment":"admins can also edit a song",
     "accessType": "WRITE",
     "principalType": "ROLE",
-    "principalId": 1,
+    "principalId": "admin",
     "permission": "ALLOW",
     "property": "*"
+  },{
+    "comment":"users can delete a song",
+    "accessType": "WRITE",
+    "principalType": "ROLE",
+    "principalId": "admin",
+    "permission": "ALLOW",
+    "property": "destroyById"
   },{
     "comment":"authenticated users can create a new song",
     "accessType": "WRITE",
