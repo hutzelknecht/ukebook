@@ -9,7 +9,7 @@
 *.swo
 *.swp
 *.tgz
-*.xml
+*.pdf
 .DS_Store
 .idea
 .project
