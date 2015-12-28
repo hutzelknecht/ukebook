@@ -5,14 +5,15 @@ module.exports = function(Song) {
 
     res.type('application/pdf');
     res.attachment('songbook.pdf');
-    wkhtmltopdf('/#/songbook', {
+    wkhtmltopdf('http://localhost:3000/#/songbook', {
       //pageSize: 'A4',
       //encoding: 'binary',
       JavascriptDelay: 1000,
       outlineDepth: 2,
       printMediaType: true,
       debug: false,
-      toc: {}
+      cover: 'assets/titlepage.html',
+      toc: ['--xsl-style-sheet assets/toc.xml']
     }).pipe(res, 'binary');
 
   };

@@ -8,6 +8,7 @@
 
   <link rel="stylesheet" href="css/layout.css" type="text/css">
   <link rel="stylesheet" href="css/ukeGeeks.music.css" type="text/css">
+  <link rel="stylesheet" href="css/print.css" type="text/css">
 </head>
 <body>
 
@@ -23,10 +24,9 @@
       <div class="songlist-container">
         <uke-song-list></uke-song-list>
       </div>
-      <add-song></add-song>
+      <add-song ng-if="user"></add-song>
     </div>
     <div class="content no-float fill" app-view-segment="0"></div>
-    <div class="east col-md-2 no-float"></div>
   </div>
   <div class="footer col-md-12 row-fluid hidden-print">UkeBook v0.1.0 <button class="btn btn-xs" ng-click="toggleLogin()">toggle login</button></div>
 </div>
