@@ -9,6 +9,10 @@ angular.module('ukebook')
 
     $scope.$songs = $songs;
 
+    $rootScope.$watch('user',function(user){
+      if (user) { $interval($scope.fetchSongList, 0,1); }
+    });
+
   })
   .directive('ukeSongList',function(){
     return {

@@ -17,7 +17,7 @@ angular.module('ukebook')
       }
     }
   })
-  .controller('AuthCtrl',function($rootScope, $scope, $auth, $http, $cookies){
+  .controller('AuthCtrl',function($rootScope, $scope, $auth, $http, $songs, $cookies){
 
     var access_token = null,
       old_token= $cookies.get('ukebook-token');
@@ -67,6 +67,8 @@ angular.module('ukebook')
     this.logout = function(){
       this.userId = null;
       this.setToken(null);
+      $songs.list = [];
+      $rootScope.user = null;
     };
 
     // get old token from cookie
@@ -81,10 +83,6 @@ angular.module('ukebook')
       restrict: 'E',
       templateUrl: 'auth/login.html',
       controllerAs: 'auth',
-      controller: 'AuthCtrl',
-      link: function($scope, $element, $attributes){
-
-
-      }
+      controller: 'AuthCtrl'
     }
   });

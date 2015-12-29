@@ -41,14 +41,14 @@
     "comment":"everyone can view a list of songs",
     "accessType": "READ",
     "principalType": "ROLE",
-    "principalId": "$everyone",
+    "principalId": "$authenticated",
     "permission": "ALLOW",
     "property": "find"
   },{
     "comment":"everyone can view a song",
     "accessType": "READ",
     "principalType": "ROLE",
-    "principalId": "$everyone",
+    "principalId": "$authenticated",
     "permission": "ALLOW",
     "property": "findById"
   },{
