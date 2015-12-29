@@ -14,9 +14,8 @@ Folgende features sind in Planung:
   <li>Wahl zwischen verschiedenen Layouts</li>
   <li>Persönliches Songbook zusammenstellen</li>
 </ul>
-<button ng-if="user" class="btn btn-primary" ng-click="overviewCtrl.allSongs()">show all Songs</button>
 
 <form ng-if="user" method="get" action="/api/Songs/pdf">
-  <button class="btn btn-primary" type="submit">Download!</button>
+  <button class="btn btn-primary" type="submit">Download PDF!</button>
 </form>
 
