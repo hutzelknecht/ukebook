@@ -47,7 +47,8 @@ gulp.task('dependencies', function () {
       'node_modules/q/q.js',
       'node_modules/angular-route-segment/build/angular-route-segment.js',
       'node_modules/gulp-traceur/node_modules/traceur/bin/traceur-runtime.js',
-      'scriptasaurus/ukeGeeks.scriptasaurus.merged.js'
+      'scriptasaurus/ukeGeeks.scriptasaurus.merged.js',
+      'columnizer/src/jquery.columnizer.min.js'
     ])
     .pipe(gulp.dest('build/lib'));
 });

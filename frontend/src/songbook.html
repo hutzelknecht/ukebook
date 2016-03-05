@@ -1,7 +1,7 @@
 <div ng-repeat="song in songbook | orderBy:'title'" class="songbook-page">
   <h2>{{song.title}}</h2>
   <h3>{{song.author}}</h3>
-  <div id="ukeSongContainer" class="ugsLayoutTwoColumn ugs-song-wrap">
+  <div id="ukeSongContainer" class="ugsLayoutTwoColumn ugs-song-wrap" ng-class="{'ub-two-column-content': columns == 2}">
     <aside id="ukeChordsCanvas" class="ugs-diagrams-wrap ugs-grouped">
       <canvas>
         <p>Your browser doesn't support canvas please upgrade (FREE) to <a href="http://www.google.com/chrome">Google Chrome</a>, <a href="http://www.mozilla.com/en-US/firefox/">Firefox</a>, or <a href="http://www.apple.com/safari/">Apple Safari</a>.</p>

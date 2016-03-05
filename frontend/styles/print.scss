@@ -1,7 +1,5 @@
 @media print {
-  /*.page-break {
-    page-break-after: always;
-  }*/
+
   html, body {
     padding: initial;
     min-height: initial;
@@ -18,6 +16,28 @@
   .footer {
     height: 0;
     display: none !important;
+  }
+  #ukeSongContainer.ub-two-column-content {
+    width: 100%;
+    > aside {
+      width: 100%;
+      clear: both;
+    }
+    > .ugs-source-wrap {
+      float: left;
+      width: 100%;
+      margin-left: 0;
+
+      .column {
+        $space-between: 30px;
+        &.first { padding-right: $space-between / 2; }
+        &.last  { padding-left:  $space-between / 2; }
+      }
+
+    }
+    > form {
+      clear: both;
+    }
   }
 }
 

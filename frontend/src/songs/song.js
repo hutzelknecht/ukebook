@@ -40,14 +40,16 @@ angular.module('ukebook')
         previousContent.remove();
         previousContent = null;
       }
+
       ukeGeeks.scriptasaurus.init();
+
       $scope.transclude(function (clone) {
         var parentEl = $scope.element.parent();
         parentEl.append(clone);
         previousContent = clone;
 
         ukeGeeks.scriptasaurus.run(this.song.tab);
-
+        $('.ub-two-column-content .ugs-source-wrap').columnize({columns: 2});
       }.bind(this));
 
     };

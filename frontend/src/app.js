@@ -20,6 +20,7 @@ angular.module('ukebook', [
       .when('/', 'overview')
       .when('/song/:id', 'song')
       .when('/songbook', 'songbook')
+      .when('/songbook2', 'songbook2')
 
       .segment('song',{
         templateUrl: 'songs/songpage.html',
@@ -34,6 +35,11 @@ angular.module('ukebook', [
         default: true
       })
       .segment('songbook', {
+        templateUrl: 'songbook.html',
+        controller: 'SongbookCtrl',
+        controllerAs: 'songbookCtrl'
+      })
+      .segment('songbook2', {
         templateUrl: 'songbook.html',
         controller: 'SongbookCtrl',
         controllerAs: 'songbookCtrl'

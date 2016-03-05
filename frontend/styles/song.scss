@@ -1,3 +1,24 @@
+#ukeSongContainer.ub-two-column-content {
+  width: 100%;
+  > aside {
+    width: 100%;
+    clear: both;
+  }
+  > .ugs-source-wrap {
+    float: left;
+    width: 100%;
+    margin-left: 0;
+
+    .column {
+      $space-between: 30px;
+      &.first { padding-right: $space-between / 2; }
+      &.last  { padding-left:  $space-between / 2; }
+    }
+  }
+  > form {
+    clear: both;
+  }
+}
 .ugs-diagrams-wrap {
 
 }
@@ -19,5 +40,4 @@
 .ugsChords code em {
   color: #d20 !important;
   margin: 0 !important;
-
 }
