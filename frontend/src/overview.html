@@ -16,9 +16,10 @@ Folgende features sind in Planung:
 </ul>
 
 <form ng-if="user" method="get" action="/api/Songs/pdf">
-  <button class="btn btn-primary" type="submit">Download one column PDF!</button>
+  <button class="btn btn-primary" type="submit">Download one column PDF</button>
 </form>
 <form ng-if="user" method="get" action="/api/Songs/pdf?layout=2">
-  <button class="btn btn-primary" type="submit">Download two column PDF!</button>
+  <input type="hidden" name="layout" value="2">
+  <button class="btn btn-primary" type="submit">Download two column PDF (Experimental!)</button>
 </form>
 
