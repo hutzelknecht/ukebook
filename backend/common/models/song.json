@@ -55,7 +55,7 @@
     "comment":"everyone can print a pdf",
     "accessType": "EXECUTE",
     "principalType": "ROLE",
-    "principalId": "$authenticated",
+    "principalId": "$everyone",
     "permission": "ALLOW",
     "property": "pdf"
   },{
@@ -73,7 +73,7 @@
     "permission": "ALLOW",
     "property": "*"
   },{
-"comment":"users cannot edit a song whatsoever",
+    "comment":"users cannot edit a song whatsoever",
     "accessType": "WRITE",
     "principalType": "ROLE",
     "principalId": "admin",
