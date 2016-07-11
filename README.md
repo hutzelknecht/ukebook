@@ -10,6 +10,7 @@ download and install a latest version of [wkhtmltopdf](http://wkhtmltopdf.org/do
 
 from any folder run:
 
+	sudo apt-get install pdftk
     npm install -g strongloop
     npm install -g gulp
     

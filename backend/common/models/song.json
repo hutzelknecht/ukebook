@@ -59,6 +59,13 @@
     "permission": "ALLOW",
     "property": "pdf"
   },{
+    "comment":"everyone can print a pdf",
+    "accessType": "EXECUTE",
+    "principalType": "ROLE",
+    "principalId": "$everyone",
+    "permission": "ALLOW",
+    "property": "merge"
+  },{
     "comment":"editors can edit a song",
     "accessType": "WRITE",
     "principalType": "ROLE",
