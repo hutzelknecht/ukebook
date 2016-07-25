@@ -29,6 +29,8 @@
     display: inherit;
     &.ugsPlain,&.ugsTabs {
       overflow-y: hidden;
+      padding: 2px 0 16px;
+      line-height: 1.5em;
     }
   }
   code {
