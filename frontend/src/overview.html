@@ -1,12 +1,13 @@
 <h1>
   Willkommen zum UkeBook der <br/>
-  <a href="http://www.meetup.com/de/Munchen-Ukulele-Meetup">münchner Ukulele Meetup gruppe</a>
+  <a href="http://www.meetup.com/de/Munchen-Ukulele-Meetup">münchner Ukulele Meetup Gruppe</a>
 </h1>
-Hier werden die Noten zu den Songs des Meetups veröffentlicht.
-Um einen Song anzuzeigen, einfach links auswählen.
+Hier werden die Noten zu den Songs des Meetups veröffentlicht.<br/>
+Um einen Song anzuzeigen, einfach links auswählen.<br/>
 Folgende features sind in Planung:
 <br/>
 <br/>
+
 <ul>
   <li>Download aller songs als einheitliches PDF  <span class="glyphicon glyphicon-ok"></span></li>
   <li>Live bearbeitung <span class="glyphicon glyphicon-ok"></span></li>
@@ -16,9 +17,10 @@ Folgende features sind in Planung:
 </ul>
 
 <form ng-if="user" method="get" action="/api/Songs/pdf">
-  <button class="btn btn-primary" type="submit">Download one column PDF</button>
+  <button class="btn btn-primary" type="submit">Download als PDF</button>
 </form>
-<form ng-if="user" method="get" action="/api/Songs/pdf?layout=2">
+
+<form ng-hide="true" ng-if="user" method="get" action="/api/Songs/pdf?layout=2">
   <input type="hidden" name="layout" value="2">
   <button class="btn btn-primary" type="submit">Download two column PDF (Experimental!)</button>
 </form>

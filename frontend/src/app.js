@@ -24,7 +24,7 @@ angular.module('ukebook', [
 
       .segment('song',{
         templateUrl: 'songs/songpage.html',
-        controller: 'SongCtrl',
+        controller: 'ukeSongTextCtrl',
         controllerAs: 'songCtrl',
         dependencies: ['id']
       })

@@ -13,11 +13,44 @@ gulp.task('default', ['dependencies', 'js', 'html', 'sass', 'tab', 'fonts', 'css
 gulp.task('dev', ['testhtml', 'watch', 'serve']);
 
 // serve the build dir
-gulp.task('serve', function () {
+gulp.task('serve-prod', function () {
   gulp.src('build')
     .pipe(webserver({
-      open: true
+      open: true,
+      livereload: true,
+      host: 'localhost',
+      proxies: [{
+        source: '/api',
+        target: 'https://ukebook.immerdieses.de/api'
+      }]
     }));
+});
+
+gulp.task('webserver', function() {
+    return gulp.src('src')
+        .pipe(webserver({
+            livereload: true,
+            port: 8500,
+            host: 'localhost',        //rich from network
+            //fallback: 'index.html', //for spa
+            open:  "http://localhost:8500/wigeoweb",
+            proxies: [
+                {
+                    source: '/wigeoweb-dev',
+                    target: 'http://wigeowebhotd:11711/wigeoweb'
+                },{
+                    source: '/cache',
+                    target: 'http://wigeowebhotd:11711/cache'
+                },{
+                    source: '/icons',
+                    target: 'http://wigeowebhotd:11711/icons'
+                },
+                {
+                    source: '/wigeoweb-claas',
+                    target: 'http://192.168.123.77:10080/wigeoweb-claas'
+                }
+            ]
+        }));
 });
 
 // watch for changes and run the relevant task
@@ -57,12 +90,9 @@ gulp.task('dependencies', function () {
 gulp.task('js', function () {
   return gulp.src('src/**/*.js')
     .pipe(rename({
-      extname: ''
+      extname: '.js'
     }))
     .pipe(traceur({
-      //modules: 'instantiate',
-      //moduleName: true,
-      //annotations: true,
       types: true,
       memberVariables: true
     }))
