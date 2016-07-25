@@ -20,8 +20,10 @@ Folgende features sind in Planung:
   <button class="btn btn-primary" type="submit">Download als PDF</button>
 </form>
 
-<form ng-hide="true" ng-if="user" method="get" action="/api/Songs/pdf?layout=2">
-  <input type="hidden" name="layout" value="2">
-  <button class="btn btn-primary" type="submit">Download two column PDF (Experimental!)</button>
-</form>
+<div ng-show="false">
+  <form ng-if="user" method="get" action="/api/Songs/pdf?layout=2">
+    <input type="hidden" name="layout" value="2">
+    <button class="btn btn-primary" type="submit">Download two column PDF (Experimental!)</button>
+  </form>
+</div>
 
