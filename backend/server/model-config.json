@@ -13,6 +13,10 @@
       "./mixins"
     ]
   },
+  "Container": {
+    "dataSource": "storage",
+    "public": true
+  },
   "User": {
     "dataSource": "production"
   },
@@ -35,5 +39,10 @@
   "Song": {
     "dataSource": "production",
     "public": true
+  },
+  "File": {
+    "dataSource": "production",
+    "public": true,
+    "strict": true
   }
 }

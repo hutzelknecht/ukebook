@@ -1,7 +1,6 @@
 {
   "name": "Container",
-  "base": "PersistedModel",
-  "dataSource": "storage",
+  "base": "Model",
   "idInjection": true,
   "properties": {},
   "validations": [],

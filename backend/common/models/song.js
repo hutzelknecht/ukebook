@@ -3,6 +3,7 @@ var PDFMerge = require('pdf-merge');
 var fs = require('fs');
 
 module.exports = function(Song) {
+  
   Song.merge = function(res, callback){
 
     var base_path = '/home/micha/dev/ukebook/backend/tmp/';

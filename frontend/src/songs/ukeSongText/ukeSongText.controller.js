@@ -1,5 +1,15 @@
 angular.module('ukebook')
-  .controller('ukeSongTextCtrl', function($rootScope, $scope, $location, $routeSegment, $interval, $http, $auth, $songs) {
+  .controller('ukeSongTextCtrl', [
+    '$rootScope',
+    '$scope',
+    '$location',
+    '$routeSegment',
+    '$interval',
+    '$http',
+    '$auth',
+    '$songs',
+    'upload',
+    function($rootScope, $scope, $location, $routeSegment, $interval, $http, $auth, $songs, upload) {
     var scriptasaurus = ukeGeeks.scriptasaurus;
     var tabs;
     this.songId = $routeSegment.$routeParams.id;
@@ -21,6 +31,9 @@ angular.module('ukebook')
         $location.url('/');
       });
     };
+
+    this.uploader = upload.createUploader(this.songId, $scope);
+
     this.user = $auth.getUser();
     this.fetchSong();
     var previousContent = null;
@@ -39,4 +52,4 @@ angular.module('ukebook')
         $('.ub-two-column-content .ugs-source-wrap').columnize({columns: 2});
       }.bind(this));
     };
-  });
+  }]);

@@ -8,5 +8,9 @@ node_modules
 /PU_sicherung_2016_07_08.backup
 /backend/db.sql
 /backend/server/datasources.json
-/backup.sql.gz
+/*.gz
+/*.sql
 /dump_pu.sh
+/restore_dev.sh
+/backend/tmp/storage/*
+/*.backup

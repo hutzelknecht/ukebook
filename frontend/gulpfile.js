@@ -38,24 +38,28 @@ gulp.task('watch', function () {
 // move dependencies into build dir
 gulp.task('dependencies', function () {
   return gulp.src([
-      'node_modules/jquery/dist/jquery.min.js',
-      'node_modules/angular/angular.min.js',
-      'node_modules/angular-animate/angular-animate.js',
-      'node_modules/angular-bootstrap/ui-bootstrap-tpls.min.js',
-      'node_modules/angular-local-storage/dist/angular-local-storage.min.js',
-      'node_modules/angular-messages/angular-messages.min.js',
-      'node_modules/angular-resource/angular-resource.min.js',
-      'node_modules/angular-route/angular-route.min.js',
-      'node_modules/angular-sanitize/angular-sanitize.min.js',
-      'node_modules/angular-touch/angular-touch.min.js',
-      'node_modules/angular-cookies/angular-cookies.min.js',
-      'node_modules/bootstrap/dist/js/bootstrap.min.js',
-      'node_modules/q/q.js',
-      'node_modules/angular-route-segment/build/angular-route-segment.js',
-      'node_modules/gulp-traceur/node_modules/traceur/bin/traceur-runtime.js',
-      'scriptasaurus/ukeGeeks.scriptasaurus.merged.js',
-      'columnizer/src/jquery.columnizer.min.js'
-    ])
+    'node_modules/jquery/dist/jquery.min.js',
+    'node_modules/angular/angular.min.*',
+    'node_modules/angular-animate/angular-animate.js',
+    'node_modules/angular-bootstrap/ui-bootstrap-tpls.min.js',
+    'node_modules/angular-local-storage/dist/angular-local-storage.min.*',
+    'node_modules/angular-messages/angular-messages.min.js',
+    'node_modules/angular-messages/angular-messages.min.js.map',
+    'node_modules/angular-resource/angular-resource.min.js',
+    'node_modules/angular-resource/angular-resource.min.js.map',
+    'node_modules/angular-route/angular-route.min.*',
+    'node_modules/angular-sanitize/angular-sanitize.min.js',
+    'node_modules/angular-sanitize/angular-sanitize.min.*',
+    'node_modules/angular-touch/angular-touch.min.*',
+    'node_modules/angular-cookies/angular-cookies.min.*',
+    'node_modules/angular-file-upload/dist/angular-file-upload.min.*',
+    'node_modules/bootstrap/dist/js/bootstrap.min.js',
+    'node_modules/q/q.js',
+    'node_modules/angular-route-segment/build/angular-route-segment.js',
+    'node_modules/gulp-traceur/node_modules/traceur/bin/traceur-runtime.js',
+    'scriptasaurus/ukeGeeks.scriptasaurus.merged.js',
+    'columnizer/src/jquery.columnizer.min.js'
+  ])
     .pipe(gulp.dest('build/lib'));
 });
 

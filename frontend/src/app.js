@@ -8,7 +8,8 @@ angular.module('ukebook', [
     'ngCookies',
     'ngSanitize',
     'ngTouch',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'angularFileUpload'
   ])
   .config(function($rootScopeProvider, $routeProvider, $routeSegmentProvider, $httpProvider) {
 

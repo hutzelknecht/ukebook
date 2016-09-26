@@ -7,6 +7,7 @@
     "angular-animate": "^1.4.8",
     "angular-bootstrap": "^0.12.2",
     "angular-cookies": "^1.4.8",
+    "angular-file-upload": "^2.3.4",
     "angular-local-storage": "^0.2.2",
     "angular-messages": "^1.4.8",
     "angular-resource": "^1.4.8",

@@ -10,7 +10,7 @@
   </aside>
 
   <uke-song-text id="ukeSongText" class="ugs-source-wrap ub-two-column-content"></uke-song-text>
-  
+
 </div>
 <form ng-if="user">
   <div class="form-group">
@@ -27,4 +27,6 @@
   </div>
   <button class="btn btn-xs btn-default" ng-click="songCtrl.delete()">delete</button>
   <button class="btn btn-xs btn-primary" ng-click="songCtrl.save()">save</button>
+  <input nv-file-select uploader="songCtrl.uploader" type="file"/>
+  <button ng-click="songCtrl.uploader.uploadAll()">upload</button>
 </form>
