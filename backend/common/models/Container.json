@@ -1,0 +1,11 @@
+{
+  "name": "Container",
+  "base": "PersistedModel",
+  "dataSource": "storage",
+  "idInjection": true,
+  "properties": {},
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}
