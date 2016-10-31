@@ -1,0 +1,6 @@
+<!--
+<button class="btn btn-xs btn-default" ng-click="printCtrl.print(songId)">print</button>
+-->
+<form ng-if="user" method="get" action="/api/Songs/pdf/{{songId}}?access_token={{printCtrl.access_token}}">
+  <button class="btn btn-primary" type="submit">Download als PDF</button>
+</form>
