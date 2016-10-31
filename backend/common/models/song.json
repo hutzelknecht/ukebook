@@ -45,7 +45,7 @@
     "permission": "ALLOW",
     "property": "find"
   },{
-    "comment":"everyone can view a song",
+    "comment":"authenticated users can view a song",
     "accessType": "READ",
     "principalType": "ROLE",
     "principalId": "$authenticated",
@@ -59,7 +59,14 @@
     "permission": "ALLOW",
     "property": "pdf"
   },{
-    "comment":"everyone can print a pdf",
+    "comment":"everyone can print a single song pdf",
+    "accessType": "EXECUTE",
+    "principalType": "ROLE",
+    "principalId": "$everyone",
+    "permission": "ALLOW",
+    "property": "singlePdf"
+  },{
+    "comment":"everyone can merge a pdf",
     "accessType": "EXECUTE",
     "principalType": "ROLE",
     "principalId": "$everyone",

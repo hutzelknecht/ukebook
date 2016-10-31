@@ -14,6 +14,7 @@ angular.module('ukebook')
     var tabs;
     this.songId = $routeSegment.$routeParams.id;
     this.fetchSong = function() {
+      // var token = 'FqUuPZHx0gddsokoT4UFeHVf6BlxWiJOsi12qpLT1Ewds7bJ0ZGdvahAV1ode5Vx';
       return $http.get('/api/songs/' + this.songId).then(function(song) {
         this.song = song.data;
         this.triggerRelink(this.song.tab);
