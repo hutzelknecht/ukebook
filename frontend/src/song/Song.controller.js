@@ -33,8 +33,6 @@ angular.module('ukebook')
       });
     };
 
-    this.uploader = upload.createUploader(this.songId, $scope);
-
     this.user = $auth.getUser();
     this.fetchSong();
     var previousContent = null;

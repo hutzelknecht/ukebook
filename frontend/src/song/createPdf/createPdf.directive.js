@@ -2,7 +2,7 @@ angular.module('ukebook')
   .directive('printPdf', ['$rootScope', function($rootScope){
     return {
       restrict: 'E',
-      templateUrl: 'songs/printPdf/printPdf.template.html',
+      templateUrl: 'songs/printPdf/createPdf.template.html',
       controller: 'PrintPdfCtrl',
       controllerAs: 'printCtrl',
       scope: {

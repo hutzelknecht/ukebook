@@ -3,8 +3,8 @@ angular.module('ukebook')
 
     var createUploader = function(songId, $scope){
       return new FileUploader({
-        scope: $scope || $rootScope,                          // to automatically update the html. Default: $rootScope
-        url: '/api/files/upload',
+        scope: $rootScope, // to automatically update the html. Default: $rootScope
+        url: '/api/files/upload?songId=' + songId,
         formData: [
           { songId: songId }
         ]

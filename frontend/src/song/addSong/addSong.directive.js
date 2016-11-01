@@ -2,7 +2,7 @@
 angular.module('ukebook')
 	.directive('addSong', function() {
 		return {
-			templateUrl: 'songs/addSong.template.html',
+			templateUrl: 'song/addSong/addSong.template.html',
 			controller: 'AddSongCtrl',
 			controllerAs: 'ctrl'
 		};

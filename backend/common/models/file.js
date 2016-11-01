@@ -18,7 +18,7 @@ module.exports = function(File) {
         File.create({
           name: fileInfo.name,
           type: fileInfo.type,
-          songId: ctx.req.params.songId,
+          songId: ctx.req.query.songId,
           container: fileInfo.container,
           url: url
         }, function (err, obj) {

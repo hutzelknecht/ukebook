@@ -84,7 +84,7 @@ module.exports = function(Song) {
     ],
     http: {path: '/pdf', verb: 'get'}
   });
-  Song.remoteMethod('singlePdf', {
+  Song.remoteMethod('singlePdf',  {
     accepts: [
       { arg: 'res', type: 'object', 'http': {source: 'res'} },
       { arg: 'id', type: 'number', required: true },

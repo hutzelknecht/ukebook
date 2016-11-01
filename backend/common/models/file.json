@@ -15,6 +15,14 @@
     "url": {
       "type": "string",
       "required": true
+    },
+    "songId":{
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "song_id",
+        "dataType": "integer"
+      }
     }
   },
   "validations": [],

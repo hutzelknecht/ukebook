@@ -27,7 +27,7 @@
   </div>
   <button class="btn btn-xs btn-default" ng-click="songCtrl.delete()">delete</button>
   <button class="btn btn-xs btn-primary" ng-click="songCtrl.save()">save</button>
+  <download-button url="songCtrl.song.pdf"></download-button>
   <print-pdf song-id="songCtrl.song.id"></print-pdf>
-  <input nv-file-select uploader="songCtrl.uploader" type="file"/>
-  <button ng-click="songCtrl.uploader.uploadAll()">upload</button>
+  <upload-control song-id="songCtrl.song.id"></upload-control>
 </form>
