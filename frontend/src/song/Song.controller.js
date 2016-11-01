@@ -1,5 +1,5 @@
 angular.module('ukebook')
-  .controller('ukeSongTextCtrl', [
+  .controller('SongCtrl', [
     '$rootScope',
     '$scope',
     '$location',
@@ -7,9 +7,9 @@ angular.module('ukebook')
     '$interval',
     '$http',
     '$auth',
-    '$songs',
+    'songApi',
     'upload',
-    function($rootScope, $scope, $location, $routeSegment, $interval, $http, $auth, $songs, upload) {
+    function($rootScope, $scope, $location, $routeSegment, $interval, $http, $auth, songApi, upload) {
     var scriptasaurus = ukeGeeks.scriptasaurus;
     var tabs;
     this.songId = $routeSegment.$routeParams.id;
@@ -24,11 +24,11 @@ angular.module('ukebook')
       $http.put('/api/songs/' + this.songId, this.song).then(function(response) {
         this.song = response.data;
         this.triggerRelink(this.song.tab);
-        $songs.get();
+        songApi.get();
       }.bind(this));
     };
     this.delete = function() {
-      $songs.delete(this.songId).then(function() {
+      songApi.delete(this.songId).then(function() {
         $location.url('/');
       });
     };

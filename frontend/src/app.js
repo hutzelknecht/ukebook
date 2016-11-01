@@ -1,4 +1,3 @@
-
 angular.module('ukebook')
   .config(function($rootScopeProvider, $routeProvider, $routeSegmentProvider, $httpProvider) {
 
@@ -19,18 +18,18 @@ angular.module('ukebook')
         dependencies: ['id']
       })
       .segment('overview',{
-        templateUrl: 'overview.html',
+        templateUrl: 'overview/overview.template.html',
         controller: 'OverviewCtrl',
         controllerAs: 'overviewCtrl',
         default: true
       })
       .segment('songbook', {
-        templateUrl: 'songbook.html',
+        templateUrl: 'songs/songbook.template.html',
         controller: 'SongbookCtrl',
         controllerAs: 'songbookCtrl'
       })
       .segment('songbook2', {
-        templateUrl: 'songbook.html',
+        templateUrl: 'songs/songbook.template.html',
         controller: 'SongbookCtrl',
         controllerAs: 'songbookCtrl'
       });

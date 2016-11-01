@@ -17,7 +17,7 @@ angular.module('ukebook')
       }
     }
   })
-  .controller('AuthCtrl', function($rootScope, $scope, $auth, $http, $songs, $cookies, $q, $location){
+  .controller('AuthCtrl', function($rootScope, $scope, $auth, $http, $cookies, $q, $location, songApi){
 
     var access_token = null,
       old_token= $cookies.get('ukebook-token') || $location.search().access_token;
@@ -70,7 +70,7 @@ angular.module('ukebook')
     this.logout = function(){
       this.userId = null;
       this.setToken(null);
-      $songs.list = [];
+      songApi.list = [];
       $rootScope.user = null;
     };
 

@@ -1,6 +1,6 @@
 "use strict";
 angular.module('ukebook')
-  .factory('$songs', function($http) {
+  .factory('api', function($http) {
     var sharedService = {};
     sharedService.list = [];
     sharedService.get = function() {
