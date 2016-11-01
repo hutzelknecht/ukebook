@@ -62,7 +62,11 @@ angular.module('ukebook')
         // in this case everything went ok, but the user is unknown for now
         console.log('auth token set - no new login attempt');
         this.userId = $cookies.get('ukebook-user-id');
-        fetchUser(this.userId).then(setUser.bind(this));
+        if (this.userId) {
+          fetchUser(this.userId).then(setUser.bind(this));
+        } else {
+          console.log('user unknown, working only with a token');
+        }
 
       }
     };

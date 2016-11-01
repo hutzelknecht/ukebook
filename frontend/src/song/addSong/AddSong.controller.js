@@ -1,6 +1,6 @@
 "use strict";
 angular.module('ukebook')
-	.controller('AddSongCtrl', function($songs) {
+	.controller('AddSongCtrl', function(songApi) {
 		this.title = '';
-		this.addSong = $songs.create;
+		this.addSong = songApi.create;
 	});
