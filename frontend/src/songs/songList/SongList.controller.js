@@ -1,6 +1,6 @@
 "use strict";
 angular.module('ukebook')
-  .controller('ukeSongListCtrl', function($rootScope, $scope, $routeSegment, $interval, $http, $songs) {
+  .controller('SongListCtrl', function($rootScope, $scope, $routeSegment, $interval, $http, $songs) {
     $scope.songId = $routeSegment.$routeParams.id;
     $scope.fetchSongList = $songs.get;
     $scope.$songs = $songs;

@@ -1,5 +1,16 @@
 
-angular.module('ukebook')
+angular.module('ukebook', [
+    'ngAnimate',
+    'ngResource',
+    'ngRoute',
+    'route-segment',
+    'view-segment',
+    'ngCookies',
+    'ngSanitize',
+    'ngTouch',
+    'ui.bootstrap',
+    'angularFileUpload'
+  ])
   .config(function($rootScopeProvider, $routeProvider, $routeSegmentProvider, $httpProvider) {
 
     $routeProvider.otherwise({
@@ -13,7 +24,7 @@ angular.module('ukebook')
       .when('/songbook2', 'songbook2')
 
       .segment('song',{
-        templateUrl: 'song/song.html',
+        templateUrl: 'song/Song.html',
         controller: 'SongCtrl',
         controllerAs: 'songCtrl',
         dependencies: ['id']

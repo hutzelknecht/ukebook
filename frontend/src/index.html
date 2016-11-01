@@ -22,7 +22,7 @@
         <login></login>
       </div>
       <div class="songlist-container">
-        <uke-song-list></uke-song-list>
+        <song-list></song-list>
       </div>
       <add-song ng-if="user"></add-song>
     </div>
@@ -50,19 +50,25 @@
 <script src="lib/ukeGeeks.scriptasaurus.merged.js"></script>
 <script src="lib/jquery.columnizer.min.js"></script>
 
+<!-- main -->
+<script src="app.module.js"></script>
 <script src="app.js"></script>
 
+<!-- view controllers -->
 <script src="overview.js"></script>
+<script src="song/Song.controller.js"></script>
+
+<!-- directives -->
 <script src="auth/auth.js"></script>
 <script src="songs/songs.service.js"></script>
 <script src="songs/upload.service.js"></script>
-<script src="songs/printPdf/printPdf.controller.js"></script>
+<script src="songs/printPdf/PrintPdf.controller.js"></script>
 <script src="songs/printPdf/printPdf.directive.js"></script>
-<script src="songs/ukeSongList/ukeSongList.controller.js"></script>
-<script src="songs/ukeSongList/ukeSongList.directive.js"></script>
-<script src="songs/ukeSongText/ukeSongText.controller.js"></script>
-<script src="songs/ukeSongText/ukeSongText.directive.js"></script>
-<script src="songs/addSong/addSong.controller.js"></script>
+<script src="songs/songList/SongList.controller.js"></script>
+<script src="songs/songList/songList.directive.js"></script>
+<script src="song/songText/SongText.controller.js"></script>
+<script src="song/songText/songText.directive.js"></script>
+<script src="songs/addSong/AddSong.controller.js"></script>
 <script src="songs/addSong/addSong.directive.js"></script>
 <script src="songbook.js"></script>
 

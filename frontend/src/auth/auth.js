@@ -17,7 +17,7 @@ angular.module('ukebook')
       }
     }
   })
-  .controller('AuthCtrl', function($rootScope, $scope, $auth, $http, $songs, $cookies, $location){
+  .controller('AuthCtrl', function($rootScope, $scope, $auth, $http, $songs, $cookies, $q, $location){
 
     var access_token = null,
       old_token= $cookies.get('ukebook-token') || $location.search().access_token;
@@ -49,26 +49,21 @@ angular.module('ukebook')
           } else {
             this.userId = response.data.id;
           }
-          var setUser = function(res){
-            var user = res.data;
-            this.userName = user.username;
-            $cookies.put('ukebook-user-id', user.id);
-            $auth.setUser(user);
-            $rootScope.user = $auth.getUser();
-          }.bind(this);
+
           if (!response.data.username) {
-            $http.get('api/users/'+ this.userId).then(function(res){
-              setUser(res);
-            }.bind(this));
+            fetchUser(this.userId).then(setUser.bind(this));
           } else {
-            setUser(response);
+            setUser.call(this, response);
           }
         }.bind(this), function(){
           // do nothing for now
         }.bind(this));
       } else {
         // in this case everything went ok, but the user is unknown for now
-        console.log('auth token set, but no new login attempt');
+        console.log('auth token set - no new login attempt');
+        this.userId = $cookies.get('ukebook-user-id');
+        fetchUser(this.userId).then(setUser.bind(this));
+
       }
     };
 
@@ -79,10 +74,26 @@ angular.module('ukebook')
       $rootScope.user = null;
     };
 
-// get old token from cookie
+    // get old token from cookie
     if (old_token) {
       $http.defaults.headers.common.Authorization = old_token;
       this.login(old_token);
+    }
+
+    function setUser(user){
+      this.userName = user.username;
+      $cookies.put('ukebook-user-id', user.id);
+      $auth.setUser(user);
+      $rootScope.user = $auth.getUser();
+      return user;
+    }
+
+    function fetchUser(id){
+      return $q(function(resolve, reject) {
+        $http.get('api/users/' + id).then(function (res) {
+          resolve(res.data);
+        }, reject);
+      });
     }
 
   })
