@@ -27,7 +27,7 @@
   </div>
   <button class="btn btn-xs btn-default" ng-click="songCtrl.delete()">delete</button>
   <button class="btn btn-xs btn-primary" ng-click="songCtrl.save()">save</button>
-  <download-button url="songCtrl.song.pdf"></download-button>
+  <download-button song-id="songCtrl.song.id"></download-button>
   <print-pdf song-id="songCtrl.song.id"></print-pdf>
   <upload-control song-id="songCtrl.song.id"></upload-control>
 </form>

@@ -1,5 +1,5 @@
 angular.module('ukebook')
-  .controller('PrintPdfCtrl', ['$scope', '$http', '$location', function($scope, $http, $location){
+  .controller('CreatePdfCtrl', ['$scope', '$http', '$location', function($scope, $http, $location){
 
     $scope.access_token = $location.search().access_token || $http.defaults.headers.common.Authorization;
 
