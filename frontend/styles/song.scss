@@ -1,22 +1,32 @@
-#ukeSongContainer.ub-two-column-content {
-  width: 100%;
-  > aside {
+#ukeSongContainer {
+  .ugsColumn {
     width: 100%;
-    clear: both;
   }
-  > .ugs-source-wrap {
-    float: left;
+  &.ub-two-column-content {
     width: 100%;
-    margin-left: 0;
-
-    .column {
-      $space-between: 30px;
-      &.first { padding-right: $space-between / 2; }
-      &.last  { padding-left:  $space-between / 2; }
+    > aside {
+      width: 100%;
+      clear: both;
     }
-  }
-  > form {
-    clear: both;
+    > .ugs-source-wrap {
+      float: left;
+      width: 100%;
+      margin-left: 0;
+
+      .ugsColumn {
+        min-height: 300px;
+        width: 50%;
+        height: 100%;
+      }
+      .column {
+        $space-between: 30px;
+        &.first { padding-right: $space-between / 2; }
+        &.last  { padding-left:  $space-between / 2; }
+      }
+    }
+    > form {
+      clear: both;
+    }
   }
 }
 .ugs-diagrams-wrap {

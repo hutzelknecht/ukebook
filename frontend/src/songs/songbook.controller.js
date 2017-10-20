@@ -15,7 +15,7 @@ angular.module('ukebook')
         $interval(function() {
           scriptasaurus.init();
           scriptasaurus.runByClasses();
-          $('.ub-two-column-content .ugs-source-wrap').columnize({columns: 2});
+          // $('.ub-two-column-content .ugs-source-wrap').columnize({columns: 2});
         }, 1000, 1);
       });
     };

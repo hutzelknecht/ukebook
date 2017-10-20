@@ -39,10 +39,19 @@
       clear: both;
     }
   }
+  .form-group, form {
+    display: none !important;
+  }
 }
 
-.ugsChords,.ugsComment {
+.ugsChords,
+.ugsComment,
+.ugsChorus,
+.ugsPlain,
+.last.column,
+.first.column {
   page-break-inside: avoid;
+  overflow-x: hidden;
 }
 
 .songbook-index {

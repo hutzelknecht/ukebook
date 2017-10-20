@@ -28,7 +28,13 @@
     </div>
     <div class="content no-float fill" app-view-segment="0"></div>
   </div>
-  <div class="footer col-md-12 row-fluid hidden-print">UkeBook v0.1.0 <button class="btn btn-xs" ng-click="toggleLogin()">toggle login</button></div>
+  <bsp class="footer col-md-12 row-fluid hidden-print">
+    <span>
+      UkeBook v0.1.0
+      <button class="btn btn-xs" ng-click="toggleLogin()">toggle login</button> &nbsp;
+      <label for="layout">two column layout</label>
+      <input id="layout" type="checkbox" ng-model="twoColumns"></div>
+    </span>
 </div>
 
 <script src="lib/jquery.min.js"></script>

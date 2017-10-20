@@ -2,15 +2,19 @@
 <h2>{{songCtrl.song.title}}</h2>
 <h3>{{songCtrl.song.author}}</h3>
 
-<div id="ukeSongContainer" class="ugsLayoutTwoColumn ugs-song-wrap">
+<div id="ukeSongContainer" class="ugsLayoutTwoColumn ugs-song-wrap" ng-class="{'ub-two-column-content': twoColumns}">
   <aside id="ukeChordsCanvas" class="ugs-diagrams-wrap ugs-grouped">
     <canvas>
       <p>Your browser doesn't support canvas please upgrade (FREE) to <a href="http://www.google.com/chrome">Google Chrome</a>, <a href="http://www.mozilla.com/en-US/firefox/">Firefox</a>, or <a href="http://www.apple.com/safari/">Apple Safari</a>.</p>
     </canvas>
   </aside>
 
-  <song-text id="ukeSongText" class="ugs-source-wrap ub-two-column-content"></song-text>
+  <song-text id="ukeSongText" class="ugs-source-wrap" ng-class="{'ub-two-column-content': twoColumn}"></song-text>
 
+</div>
+<div class="form-group">
+  <label>columns</label>
+  <input class="form-control" ng-model="songCtrl.columns" type="number">
 </div>
 <form ng-if="user">
   <div class="form-group">

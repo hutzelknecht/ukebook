@@ -2,7 +2,7 @@ angular.module('ukebook')
   .controller('DownloadPdfCtrl', function($scope, $http, $q){
 
     // TODO: get pdf url with something like this beforehand
-    // http://localhost:3000/api/Files?filter[where][songId]=44
+    // http://localhost:3000/api/File?filter[where][songId]=44
 
     // TODO: think about handling no urls
 
@@ -21,7 +21,7 @@ angular.module('ukebook')
       songId = songId || $scope.songId;
       return $q(function(resolve, reject){
         if (!songId) reject();
-        $http.get('/api/Files?filter[fields][url]=true&filter[where][songId]=' + songId).then(function(response){
+        $http.get('/api/File?filter[fields][url]=true&filter[where][songId]=' + songId).then(function(response){
           var url = response.data && response.data[0] && response.data[0].url;
           if (url) {
             resolve(url);

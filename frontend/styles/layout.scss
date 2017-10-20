@@ -3,6 +3,12 @@
 @import "song";
 @import "songlist";
 
+.column {
+  $space-between: 30px;
+  &.first { padding-right: $space-between / 2; }
+  &.last  { padding-left:  $space-between / 2; }
+}
+
 @media screen {
   html, body {
     padding: 0;

@@ -34,6 +34,7 @@ angular.module('ukebook')
     };
 
     this.user = $auth.getUser();
+    // this.columns = 1;
     this.fetchSong();
     var previousContent = null;
     this.triggerRelink = function() {
@@ -43,12 +44,13 @@ angular.module('ukebook')
         previousContent = null;
       }
       ukeGeeks.scriptasaurus.init();
-      $scope.transclude(function(clone) {
+      $interval(function(clone) {
+        if (!$scope.element) return;
         var parentEl = $scope.element.parent();
         parentEl.append(clone);
         previousContent = clone;
         ukeGeeks.scriptasaurus.run(this.song.tab);
-        $('.ub-two-column-content .ugs-source-wrap').columnize({columns: 2});
-      }.bind(this));
+        // $('.ub-two-column-content .ugs-source-wrap').columnize({columns: 2});
+      }.bind(this), 0, 1);
     };
   }]);

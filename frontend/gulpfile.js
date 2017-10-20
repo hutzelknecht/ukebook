@@ -26,6 +26,20 @@ gulp.task('serve-prod', function () {
     }));
 });
 
+// serve the build dir
+gulp.task('serve-dev', function () {
+  gulp.src('build')
+    .pipe(webserver({
+      open: true,
+      livereload: true,
+      host: 'localhost',
+      proxies: [{
+        source: '/api',
+        target: 'http://0.0.0.0:3000/api'
+      }]
+    }));
+});
+
 // watch for changes and run the relevant task
 gulp.task('watch', function () {
   gulp.watch('src/**/*.js', ['js']);

@@ -1,9 +1,11 @@
 angular.module('ukebook')
-  .config(function($rootScopeProvider, $routeProvider, $routeSegmentProvider, $httpProvider) {
+  .config(function($rootScopeProvider, $routeProvider, $locationProvider, $routeSegmentProvider, $httpProvider) {
 
     $routeProvider.otherwise({
       redirectTo: '/'
     });
+
+    $locationProvider.hashPrefix('');
 
     $routeSegmentProvider
       .when('/', 'overview')
@@ -46,4 +48,5 @@ angular.module('ukebook')
         $auth.toggleLogin();
       },0,1);
     };
+    $rootScope.twoColumns = false;
   });

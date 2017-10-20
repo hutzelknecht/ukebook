@@ -37,7 +37,7 @@ angular.module('ukebook').controller('SongTextCtrl', ['$rootScope', '$scope', '$
       parentEl.append(clone);
       previousContent = clone;
       ukeGeeks.scriptasaurus.run(this.song.tab);
-      $('.ub-two-column-content .ugs-source-wrap').columnize({columns: 2});
+      // $('.ub-two-column-content .ugs-source-wrap').columnize({columns: 2});
     }.bind(this));
   };
 }]);
