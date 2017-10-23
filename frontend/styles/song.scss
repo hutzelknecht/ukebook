@@ -1,3 +1,17 @@
+.content {
+  h1, h2, h3 {
+    float: left;
+  }
+  h2, h3 {
+    display: inline-block;
+    width: 100%;
+    clear: both;
+  }
+  form {
+    clear: both;
+  }
+}
+
 #ukeSongContainer {
   .ugsColumn {
     width: 100%;
@@ -5,18 +19,22 @@
   &.ub-two-column-content {
     width: 100%;
     > aside {
-      width: 100%;
+      width: 220px;
       clear: both;
     }
     > .ugs-source-wrap {
       float: left;
-      width: 100%;
+      width: 80%;
       margin-left: 0;
 
       .ugsColumn {
-        min-height: 300px;
+        min-height: 920px;
         width: 50%;
-        height: 100%;
+        border: 2px solid #eee;
+        &:nth-child(1), &:nth-child(2) {
+          position: relative;
+          top: -80px;
+        }
       }
       .column {
         $space-between: 30px;

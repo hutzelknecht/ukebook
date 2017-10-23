@@ -10,6 +10,19 @@
     right: initial;
     position: initial;
   }
+  .content {
+    h1, h2, h3 {
+      float: left;
+    }
+    h2, h3 {
+      display: inline-block;
+      width: 220px;
+      clear: both;
+    }
+    form {
+      clear: both;
+    }
+  }
   .songbook-page {
     page-break-before: always;
   }
@@ -20,14 +33,23 @@
   #ukeSongContainer.ub-two-column-content {
     width: 100%;
     > aside {
-      width: 100%;
+      width: 220px;
       clear: both;
     }
     > .ugs-source-wrap {
       float: left;
-      width: 100%;
+      width: 80%;
       margin-left: 0;
 
+      .ugsColumn {
+        min-height: 920px;
+        width: 50%;
+        border: 0;
+        &:nth-child(1), &:nth-child(2) {
+          position: relative;
+          top: -80px;
+        }
+      }
       .column {
         $space-between: 30px;
         &.first { padding-right: $space-between / 2; }

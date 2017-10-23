@@ -1,7 +1,7 @@
 // Overview Component
 
 angular.module('ukebook')
-  .controller('SongbookCtrl',function($scope, $http, $interval, $routeSegment){
+  .controller('SongbookCtrl',function($rootScope, $scope, $http, $interval, $routeSegment){
 
     var scriptasaurus = ukeGeeks.scriptasaurus;
 
@@ -11,6 +11,9 @@ angular.module('ukebook')
         $scope.columns = 1;
         if ($routeSegment.name == 'songbook2') {
           $scope.columns = 2;
+          $rootScope.twoColumns = true;
+        } else {
+          $rootScope.twoColumns = false;
         }
         $interval(function() {
           scriptasaurus.init();

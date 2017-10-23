@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>UkeBook v0.1.0</title>
+  <title>UkeBook v0.2.0</title>
 
   <link rel="stylesheet" href="css/layout.css" type="text/css">
   <link rel="stylesheet" href="css/ukeGeeks.music.css" type="text/css">
@@ -14,7 +14,7 @@
 
 <div ng-app="ukebook" class="container-fluid">
   <div class="page-area fill">
-    <div class="west col-md-2 no-float fill hidden-print">
+    <div class="west col-md-2 fill hidden-print">
       <h1 class="header"><a href="/#/">UkeBook</a></h1>
       <div class="search"></div>
       <div class="nav"></div>
@@ -26,7 +26,7 @@
       </div>
       <add-song ng-if="user"></add-song>
     </div>
-    <div class="content no-float fill" app-view-segment="0"></div>
+    <div class="content pull-left fill" app-view-segment="0"></div>
   </div>
   <bsp class="footer col-md-12 row-fluid hidden-print">
     <span>

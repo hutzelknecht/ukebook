@@ -48,5 +48,5 @@ angular.module('ukebook')
         $auth.toggleLogin();
       },0,1);
     };
-    $rootScope.twoColumns = false;
+    $rootScope.twoColumns = true;
   });
