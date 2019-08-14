@@ -10,18 +10,26 @@ download and install a latest version of [wkhtmltopdf](http://wkhtmltopdf.org/do
 
 from any folder run:
 
-    sudo apt-get install pdftk
+    sudo apt-get install pdftk  
     npm install -g gulp
     
 in frontend folder run:
 
-    npm install
-    gulp
+    npm install  
+    gulp  
 
 add a username and password to basicAuth.js
 
 ## Develop
 
-npm install
-npm run build
-npm start
+The node_modules folder will take up around 35 MB of diskspace on the backend and around 50 MB on the frontend. The frontend footprint is about 2MB.
+
+    npm install  
+    npm run build  
+    npm start  
+
+## Production
+
+use [pm2](http://pm2.keymetrics.io/) or other daemonized service to run a node script.
+
+    pm2 start index.js --name ukebook
