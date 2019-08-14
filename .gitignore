@@ -6,11 +6,9 @@ node_modules
 /frontend/columnizer/tools
 /frontend/columnizer/samples
 /PU_sicherung_2016_07_08.backup
-/backend/db.sql
-/backend/server/datasources.json
 /*.gz
 /*.sql
 /dump_pu.sh
 /restore_dev.sh
-/backend/tmp/storage/*
+/backend
 /*.backup
