@@ -9,11 +9,11 @@ angular.module('ukebook')
     // TODO: maybe move this to a service and call from song ctrl
     $scope.$watch('songId', function(songId){
       if (songId) {
-        getUrl().then(function(url){
-          this.url = url;
-        }.bind(this), function(){
-          this.url = null;
-        }.bind(this));
+        // getUrl().then(function(url){
+        //   this.url = url;
+        // }.bind(this), function(){
+        //   this.url = null;
+        // }.bind(this));
       }
     }.bind(this));
 

@@ -16,12 +16,12 @@ Folgende features sind in Planung:
   <li>Persönliches Songbook zusammenstellen</li>
 </ul>
 
-<form ng-if="user" method="get" action="/api/Songs/pdf">
+<form ng-if="user" method="get" action="{{ '/api/song/pdf?access_token=' +overviewCtrl.token }}">
   <button class="btn btn-primary" type="submit">Download als PDF</button>
 </form>
 
-<div ng-show="false">
-  <form ng-if="user" method="get" action="/api/Songs/pdf?layout=2">
+<div>
+  <form ng-if="user" method="get" action="{{ '/api/song/pdf?layout=2&access_token=' +overviewCtrl.token }}">
     <input type="hidden" name="layout" value="2">
     <button class="btn btn-primary" type="submit">Download two column PDF (Experimental!)</button>
   </form>

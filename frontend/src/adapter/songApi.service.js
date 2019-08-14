@@ -4,25 +4,37 @@ angular.module('ukebook')
     var sharedService = {};
     sharedService.list = [];
     sharedService.get = function() {
-      var fieldsFilter = '?filter[fields][title]=true&filter[fields][id]=true';
-      return $http.get('/api/Songs' + fieldsFilter).then(function(songs) {
-        sharedService.list = songs.data;
+      return $http.get('/api/song/titles').then(function(response) {
+        sharedService.list = response.data;
       }, function() {
         console.warn('failed to fetch song list');
       });
     };
     sharedService.create = function(title) {
-      return $http.post('/api/Songs', {title: title || 'New Song'}).then(function(songs) {
+      return $http.post('/api/song', {title: title || 'New Song'}, {
+        headers: {
+
+        }
+      }).then(function(songs) {
+        sharedService.get();
+      }, function(e) {
+        console.warn('failed to create a song');
+        console.warn(e.status, e.statusText);
+      });
+    };
+    sharedService.update = function(songId, song) {
+      return $http.post('/api/song/' + songId, song).then(function(songs) {
         sharedService.get();
       }, function() {
-        console.warn('failed to create a song');
+        console.warn('failed to update a song');
       });
     };
     sharedService.delete = function(id) {
-      return $http.delete('/api/Songs/' + id).then(function(songs) {
+      return $http.delete('/api/song/' + id).then(function(songs) {
         return sharedService.get();
-      }, function() {
+      }, function(e) {
         console.warn('failed to delete song ' + id);
+        console.warn(e.status, e.statusText);
       });
     };
     return sharedService;

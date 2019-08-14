@@ -15,17 +15,20 @@ angular.module('ukebook')
     this.songId = $routeSegment.$routeParams.id;
     this.fetchSong = function() {
       // var token = 'FqUuPZHx0gddsokoT4UFeHVf6BlxWiJOsi12qpLT1Ewds7bJ0ZGdvahAV1ode5Vx';
-      return $http.get('/api/songs/' + this.songId).then(function(song) {
+      return $http.get('/api/song/' + this.songId).then(function(song) {
         this.song = song.data;
         this.triggerRelink(this.song.tab);
       }.bind(this));
     };
     this.save = function() {
-      $http.put('/api/songs/' + this.songId, this.song).then(function(response) {
+      songApi.update(this.songId, this.song).then(function(response){
         this.song = response.data;
         this.triggerRelink(this.song.tab);
         songApi.get();
       }.bind(this));
+      // $http.put('/api/song/' + this.songId, this.song).then(function(response) {
+      //
+      // }.bind(this));
     };
     this.delete = function() {
       songApi.delete(this.songId).then(function() {

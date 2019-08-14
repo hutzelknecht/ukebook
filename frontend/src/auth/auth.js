@@ -1,7 +1,8 @@
 angular.module('ukebook')
-  .service('$auth',function(){
+  .service('$auth',function($cookies, $http, $location){
     var showLoginForm = false;
     var user = null;
+    var token = null;
     return {
       toggleLogin: function(){
         return showLoginForm = !showLoginForm;
@@ -14,13 +15,20 @@ angular.module('ukebook')
       },
       getUser: function(){
         return user;
+      },
+      setToken: function(token){
+        $cookies.put('ukebook-token', token);
+        $http.defaults.headers.common.Authorization = token;
+      },
+      getToken: function(){
+        return $cookies.get('ukebook-token') || $location.search().access_token;
       }
     }
   })
   .controller('AuthCtrl', function($rootScope, $scope, $auth, $http, $cookies, $q, $location, songApi){
 
     var access_token = null,
-      old_token= $cookies.get('ukebook-token') || $location.search().access_token;
+      old_token = $cookies.get('ukebook-token') || $location.search().access_token;
 
     this.$auth = $auth;
     this.loginEmail = null;
@@ -71,6 +79,8 @@ angular.module('ukebook')
       }
     };
 
+    setUser.call(this, 1);
+
     this.logout = function(){
       this.userId = null;
       this.setToken(null);
@@ -88,7 +98,7 @@ angular.module('ukebook')
       this.userName = user.username;
       $cookies.put('ukebook-user-id', user.id);
       $auth.setUser(user);
-      $rootScope.user = $auth.getUser();
+      $rootScope.user = 1; //$auth.getUser();
       return user;
     }
 

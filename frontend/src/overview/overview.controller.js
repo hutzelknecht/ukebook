@@ -5,4 +5,6 @@ angular.module('ukebook')
       this.allSongs = function(){
         $location.url('/songbook');
       };
+      $scope.token = this.token = $auth.getToken();
+      console.log(this.token);
   });

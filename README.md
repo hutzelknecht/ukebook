@@ -10,8 +10,7 @@ download and install a latest version of [wkhtmltopdf](http://wkhtmltopdf.org/do
 
 from any folder run:
 
-	sudo apt-get install pdftk
-    npm install -g strongloop
+    sudo apt-get install pdftk
     npm install -g gulp
     
 in frontend folder run:
@@ -19,29 +18,10 @@ in frontend folder run:
     npm install
     gulp
 
-and in backend folder run    
-    
-    npm install
-    node .   
-    
-in backend/server folder create a file **datasources.json** such as
+add a username and password to basicAuth.js
 
+## Develop
 
-    {
-      "db": {
-        "name": "db",
-        "connector": "memory"
-      },
-      "production": {
-        "name": "production",
-        "connector": "postgresql",
-        "host": "localhost",
-        "port": "5432",
-        "database": "ukebook",
-        "username": "postgres",
-        "password": "postgres",
-        "debug": false
-      }
-    }
-    
-
+npm install
+npm run build
+npm start

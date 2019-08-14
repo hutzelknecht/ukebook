@@ -6,7 +6,7 @@ angular.module('ukebook')
     var scriptasaurus = ukeGeeks.scriptasaurus;
 
     $scope.fetchSongbook = function(){
-      return $http.get('/api/songs').then(function(songs){
+      return $http.get('/api/song').then(function(songs){
         $scope.songbook = songs.data;
         $scope.columns = 1;
         if ($routeSegment.name == 'songbook2') {
@@ -15,7 +15,10 @@ angular.module('ukebook')
         $interval(function() {
           scriptasaurus.init();
           scriptasaurus.runByClasses();
-          // $('.ub-two-column-content .ugs-source-wrap').columnize({columns: 2});
+          $interval(function() {
+            window.status = 'rendered';
+            console.log('rendered');
+          }, 2000, 1);
         }, 1000, 1);
       });
     };

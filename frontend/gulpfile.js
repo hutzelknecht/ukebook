@@ -10,7 +10,7 @@ var gulp = require('gulp'),
 gulp.task('default', ['dependencies', 'js', 'html', 'sass', 'tab', 'fonts', 'css']);
 
 // run development task
-gulp.task('dev', ['testhtml', 'watch', 'serve']);
+gulp.task('dev', ['testhtml', 'watch', 'serve-dev']);
 
 // serve the build dir
 gulp.task('serve-prod', function () {
@@ -35,7 +35,7 @@ gulp.task('serve-dev', function () {
       host: 'localhost',
       proxies: [{
         source: '/api',
-        target: 'http://0.0.0.0:3000/api'
+        target: 'http://0.0.0.0:3001/api'
       }]
     }));
 });

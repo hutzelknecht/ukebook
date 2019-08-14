@@ -4,13 +4,13 @@ angular.module('ukebook').controller('SongTextCtrl', ['$rootScope', '$scope', '$
   var tabs;
   this.songId = $routeSegment.$routeParams.id;
   this.fetchSong = function() {
-    return $http.get('/api/songs/' + this.songId).then(function(song) {
+    return $http.get('/api/song/' + this.songId).then(function(song) {
       this.song = song.data;
       this.triggerRelink(this.song.tab);
     }.bind(this));
   };
   this.save = function() {
-    $http.put('/api/songs/' + this.songId, this.song).then(function(response) {
+    $http.put('/api/song/' + this.songId, this.song).then(function(response) {
       this.song = response.data;
       this.triggerRelink(this.song.tab);
       songApi.get();

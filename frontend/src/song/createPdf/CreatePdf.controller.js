@@ -7,7 +7,7 @@ angular.module('ukebook')
 
       console.log($scope.songId);
       $http({
-        url:'/api/Songs/pdf/' + $scope.songId,
+        url:'/api/song/pdf/' + $scope.songId,
         method: 'GET'
       }).then(function(response){
         console.log(response);
